@@ -10,6 +10,12 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-orbitron: var(--font-orbitron);
+  --font-roboto: var(--font-roboto);
+  --font-poppins: var(--font-poppins);
+  --font-playfair: var(--font-playfair);
+  --font-winky: var(--font-winky);
+  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +29,20 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap');
+
+@font-face {
+  font-family: 'Winky Rough';
+  src: url('/Winky_Rough/static/WinkyRough-LightItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Winky Rough';
+  src: url('/Winky_Rough/static/WinkyRough-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }

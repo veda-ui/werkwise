@@ -1,6 +1,31 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import {Poppins} from "next/font/google";
+import { Playfair_Display } from "next/font/google";
+import { Roboto } from "next/font/google";
+import { Orbitron } from "next/font/google";
 import "./globals.css";
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '600'], 
+  variable: '--font-poppins', 
+});
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-roboto',
+});
+
+ const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-playfair',
+});
+const orbitron = Orbitron({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-orbitron',
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} ${roboto.variable} ${playfair.variable} ${poppins.variable}   antialiased`}
       >
         {children}
       </body>
