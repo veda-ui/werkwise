@@ -6,6 +6,7 @@ import gsap from 'gsap';
 import { useControls } from 'leva';
 import { useGSAP } from '@gsap/react';
 import { useState } from 'react';
+import Link from 'next/link';
 
 
 
@@ -46,18 +47,18 @@ export default function Home() {
         loginboxref.current,
         {
           display: "flex",
-          y: -800,
+          y: -200,
 
 
         },
         {
           display: "flex",
-          duration: 1,
+          duration: 0.5,
           y: 0,
           x: 0,
           z: 0,
           ease: "power3.inOut",
-          stagger: 0.3
+         
 
         }
       )
@@ -69,10 +70,10 @@ export default function Home() {
         loginboxref.current,
         {
           display: "flex",
-          y: -800,
+          y: -200,
           ease: "power3.inOut",
-          stagger: 0.3,
-          duration: 1
+          
+          duration: 0.5
         }
 
       )
@@ -87,18 +88,17 @@ export default function Home() {
         signupboxref.current,
         {
           display: "flex",
-          y: -800,
+          y: -200,
 
 
         },
         {
           display: "flex",
-          duration: 1,
+          duration: 0.5,
           y: 0,
           x: 0,
           z: 0,
-          ease: "power3.inOut",
-          stagger: 0.3
+          ease: "power3.inOut"
 
         }
       )
@@ -113,10 +113,10 @@ export default function Home() {
         signupboxref.current,
         {
           display: "flex",
-          y: -800,
+          y: -200,
           ease: "power3.inOut",
-          stagger: 0.3,
-          duration: 1
+         
+          duration: 0.5
         }
 
       )
@@ -275,15 +275,15 @@ export default function Home() {
 
   return (
     <div className=' bg-black h-full w-full overflow-auto min-w-screen min-h-screen m-0  relative overflow-y-hidden overflow-x-hidden'>
-      <div ref={navref} className='absolute top-2 left-0 h-10 z-0 w-screen flex justify-center items-center rounded-2xl shadow-teal-700 shadow-md'>
-        <ul className='text-white font-orbitron flex gap-10 text-lg'>
-          <div className=' hover:cursor-pointer hover:scale-125 hover:text-shadow-md hover:text-shadow-teal-700 ease-in-out duration-200 '>
+      <div ref={navref} className=' bg-black/60 absolute top-2 left-0 h-10 z-0 w-screen flex justify-center items-center rounded-2xl shadow-teal-700 shadow-md '>
+        <ul className='text-white font-orbitron flex gap-10 text-lg blur-none'>
+          <Link href="/" className=' blur-none hover:cursor-pointer hover:scale-125 hover:text-shadow-md hover:text-shadow-teal-700 ease-in-out duration-200 '>
             Home
-          </div>
-          <div className='hover:cursor-pointer hover:scale-125 hover:text-shadow-md hover:text-shadow-teal-700 ease-in-out duration-200 ' >Services</div>
-          <div className='hover:cursor-pointer hover:scale-125 hover:text-shadow-md hover:text-shadow-teal-700 ease-in-out duration-200 '>Policies</div>
-          <div onMouseOver={loginh} className='hover:cursor-pointer hover:scale-125 hover:text-shadow-md hover:text-shadow-teal-700 ease-in-out duration-200 '>Login</div>
-          <div onMouseOver={signuph} className='hover:cursor-pointer hover:scale-125 hover:text-shadow-md hover:text-shadow-teal-700 ease-in-out duration-200 '>Signup </div>
+          </Link>
+          <Link  href="/Services"className='blur-none hover:cursor-pointer hover:scale-125 hover:text-shadow-md hover:text-shadow-teal-700 ease-in-out duration-200 ' >Services</Link>
+          <Link href={"/Policies"} className='blur-none hover:cursor-pointer hover:scale-125 hover:text-shadow-md hover:text-shadow-teal-700 ease-in-out duration-200 '>Policies</Link>
+          <div onMouseOver={loginh} className='blur-none hover:cursor-pointer hover:scale-125 hover:text-shadow-md hover:text-shadow-teal-700 ease-in-out duration-200 '>Login</div>
+          <div onMouseOver={signuph} className='blur-none hover:cursor-pointer hover:scale-125 hover:text-shadow-md hover:text-shadow-teal-700 ease-in-out duration-200 '>Signup </div>
         </ul>
 
       </div>
@@ -295,18 +295,18 @@ export default function Home() {
         Now And Forever
 
       </div>
-      <div onMouseLeave={loginnoh} ref={loginboxref} className='  flex flex-col absolute gap-10 top-0 left-2 z-50 bg-white rounded-4xl overflow-y-hidden overflow-x-hidden text-black font-orbitron text-6xl' style={{ width: '95% ', height: '93%', display: 'none' }}>
-        <div onMouseOver={texth} onMouseOut={textnoh} className='mt-80 hover:cursor-pointer  hover:text-shadow-md hover:text-shadow-teal-700 ease-in-out duration-200' >Login As Employer</div>
-        <div onMouseOver={texth} onMouseOut={textnoh} className=' hover:cursor-pointer  hover:text-shadow-md hover:text-shadow-teal-700 ease-in-out duration-200'>Login As Employee </div>
-        <div onMouseOver={texth} onMouseOut={textnoh} className=' hover:cursor-pointer  hover:text-shadow-md hover:text-shadow-teal-700 ease-in-out duration-200'>Login As Administrator</div>
-        <div></div>
+      <div onMouseLeave={loginnoh} ref={loginboxref} className='  flex flex-col absolute gap-2 top-12  z-50 bg-black/30 rounded-md overflow-y-hidden overflow-x-hidden font-orbitron text-white' style={{ width: '6% ', height: '9%', display: 'none',left:'55%' }}>
+        <Link href="/EmployerLogin" onMouseOver={texth} onMouseOut={textnoh} className=' hover:cursor-pointer  hover:text-shadow-md hover:text-shadow-teal-700 ease-in-out duration-200' >Employer</Link>
+        <Link href="/EmployeeLogin" onMouseOver={texth} onMouseOut={textnoh} className=' hover:cursor-pointer  hover:text-shadow-md hover:text-shadow-teal-700 ease-in-out duration-200'>Employee </Link>
+  
+        
 
       </div>
-      <div onMouseLeave={signupnoh} ref={signupboxref} className='  flex flex-col absolute gap-20 top-0 left-2 z-50 bg-white rounded-4xl overflow-y-hidden overflow-x-hidden text-black font-orbitron text-6xl' style={{ width: '95% ', height: '93%', display: 'none' }}>
-        <div onMouseOver={texth} onMouseOut={textnoh} className='mt-96 hover:cursor-pointer  hover:text-shadow-md hover:text-shadow-teal-700 ease-in-out duration-200' >SignUp As Employer</div>
-        <div onMouseOver={texth} onMouseOut={textnoh} className=' hover:cursor-pointer  hover:text-shadow-md hover:text-shadow-teal-700 ease-in-out duration-200'>SignUp As Employee </div>
+      <div onMouseLeave={signupnoh} ref={signupboxref} className='  flex flex-col absolute gap-2 top-12 left-2 z-50 bg-black/30 rounded-md overflow-y-hidden overflow-x-hidden text-white font-orbitron ' style={{ width: '6% ', height: '9%', display: 'none',left:'62%' }}>
+        <Link href="/EmployerSignup" onMouseOver={texth} onMouseOut={textnoh} className='hover:cursor-pointer  hover:text-shadow-md hover:text-shadow-teal-700 ease-in-out duration-200' >Employer</Link>
+        <Link href="/EmployeeSignup" onMouseOver={texth} onMouseOut={textnoh} className=' hover:cursor-pointer  hover:text-shadow-md hover:text-shadow-teal-700 ease-in-out duration-200'>Employee </Link>
 
-        <div></div>
+        
 
       </div>
 
